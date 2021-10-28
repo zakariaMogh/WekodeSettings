@@ -3,6 +3,7 @@
 namespace Wekode\Settings;
 
 //use App\Providers\SettingServiceProvider;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
 class SettingSetupServiceProvider extends ServiceProvider
@@ -25,8 +26,7 @@ class SettingSetupServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $timestamp = date('Y_m_d_His', time());
-        // Check if telr transaction table is migrated
-        if (! class_exists('CreateSettingsTable')) {
+        if (! Schema::hasTable('settings')) {
             $this->publishes([
                 __DIR__.'/migrations/create_settings_table.php.stub' => $this->app->databasePath()."/migrations/{$timestamp}_create_settings_table.php",
             ], 'migrations');

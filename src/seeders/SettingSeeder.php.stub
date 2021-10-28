@@ -228,6 +228,6 @@ class SettingSeeder extends Seeder
                 return;
             }
         }
-        $this->command->info('Admin permissions was inserted Successfully');
+        $this->command->info('Settings was inserted Successfully');
     }
 }
