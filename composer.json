@@ -21,13 +21,13 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Wekode\\Settings\\SettingServiceProvider"
+                "Wekode\\Settings\\SettingSetupServiceProvider"
             ]
         }
     },
     "scripts": {
         "post-install-cmd": [
-            "php artisan vendor:publish --provider=\"wekode\\SettingSetupServiceProvider\""
+            "php artisan vendor:publish --provider=\"wekode\\SettingServiceProvider\""
         ]
     }
 
