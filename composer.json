@@ -1,0 +1,34 @@
+{
+    "name": "wekode/settings",
+    "description": "A simple settings package",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "zakariaMogh",
+            "email": "zakaria.dehaba@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Wekode\\Settings\\": "/src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Wekode\\Settings\\SettingServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "php artisan vendor:publish --provider=\"wekode\\SettingServiceProvider\""
+        ]
+    }
+
+}

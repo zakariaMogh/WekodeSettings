@@ -1,0 +1,233 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Setting;
+use Illuminate\Database\Seeder;
+
+class SettingSeeder extends Seeder
+{
+    /**
+     * @var array
+     */
+    protected $settings = [
+        [
+            'key' => 'site_name',
+            'value' => 'Fish Tender',
+        ],
+        [
+            'key' => 'contact_email',
+            'value' => 'contact@fish-tender.com',
+        ],
+        [
+            'key' => 'phone',
+            'value' => '+213 25458458558',
+        ],
+        [
+            'key' => 'address',
+            'value' => 'This is a dummy address, just for testing.',
+        ],
+        [
+            'key' => 'fax',
+            'value' => '+213 5224565552',
+        ],
+        [
+            'key' => 'default_email_address',
+            'value' => 'admin@admin.com',
+        ],
+        [
+            'key' => 'currency_code',
+            'value' => 'SAR',
+        ],
+        [
+            'key' => 'currency_symbol',
+            'value' => 'ر.س',
+        ],
+        [
+            'key' => 'site_logo',
+            'value' => '',
+        ],
+        [
+            'key' => 'site_favicon',
+            'value' => '',
+        ],
+        [
+            'key' => 'footer_copyright_text',
+            'value' => '',
+        ],
+        [
+            'key' => 'seo_meta_title',
+            'value' => '',
+        ],
+        [
+            'key' => 'seo_meta_description',
+            'value' => '',
+        ],
+        [
+            'key' => 'social_facebook',
+            'value' => 'https://www.facebook.com/profile.php?id=100065703254530',
+        ],
+        [
+            'key' => 'social_twitter',
+            'value' => 'https://twitter.com/fishtendersa',
+        ],
+        [
+            'key' => 'social_instagram',
+            'value' => 'https://www.instagram.com/p/CMx0tF5H1PR/?utm_medium=copy_link',
+        ],
+        [
+            'key' => 'social_snapchat',
+            'value' => 'https://www.snapchat.com/add/marshads',
+        ],
+        [
+            'key' => 'social_youtube',
+            'value' => 'https://youtube.com/channel/UCfgA5zqP1PcpP2RWxThgFfA',
+        ],
+        [
+            'key' => 'social_linkedin',
+            'value' => '',
+        ],
+        [
+            'key' => 'google_analytics',
+            'value' => '',
+        ],
+        [
+            'key' => 'facebook_pixels',
+            'value' => '',
+        ],
+        [
+            'key' => 'stripe_payment_method',
+            'value' => '',
+        ],
+        [
+            'key' => 'stripe_key',
+            'value' => '',
+        ],
+        [
+            'key' => 'stripe_secret_key',
+            'value' => '',
+        ],
+        [
+            'key' => 'paypal_payment_method',
+            'value' => '',
+        ],
+        [
+            'key' => 'paypal_client_id',
+            'value' => '',
+        ],
+        [
+            'key' => 'paypal_secret_id',
+            'value' => '',
+        ],
+        [
+            'key' => 'footer_copyright_link',
+            'value' => '',
+        ],
+        [
+            'key' => 'value_added_tax',
+            'value' => 15,
+        ],
+        [
+            'key' => 'site_tax',
+            'value' => 10,
+        ],
+        [
+            'key' => 'search_diameter',
+            'value' => 100000,
+        ],
+        [
+            'key' => 'offer_price_per_day',
+            'value' => 10,
+        ],
+        [
+            'key' => 'min_withdrawal_amount',
+            'value' => 10,
+        ],
+        [
+            'key' => 'min_order_amount',
+            'value' => 150,
+        ],
+        [
+            'key' => 'privacy_policy',
+            'value' => '',
+        ],
+        [
+            'key' => 'user_terms_of_use',
+            'value' => '',
+        ],
+        [
+            'key' => 'fisher_terms_of_use',
+            'value' => '',
+        ],
+        [
+            'key' => 'about_us',
+            'value' => '',
+        ],
+        [
+            'key' => 'delivery_price',
+            'value' => 200,
+        ],
+        [
+            'key' => 'shipox_token',
+            'value' => '',
+        ],
+        [
+            'key' => 'delivery_type',
+            'value' => 1, // 1: fisher - 2: external
+        ],
+        [
+            'key' => 'fisher_delivery_price',
+            'value' => 100,
+        ],
+        [
+            'key' => 'fisher_app_ios',
+            'value' => '',
+        ],
+        [
+            'key' => 'fisher_app_android',
+            'value' => '',
+        ],
+        [
+            'key' => 'user_app_ios',
+            'value' => '',
+        ],
+        [
+            'key' => 'user_app_android',
+            'value' => '',
+        ],
+        [
+            'key' => 'offer_promotion_price',
+            'value' => 100,
+        ],
+        [
+            'key' => 'offer_slide_price',
+            'value' => 100,
+        ],
+        [
+            'key' => 'fisher_instruction',
+            'value' => '',
+        ],
+        [
+            'key' => 'user_instruction',
+            'value' => '',
+        ],
+    ];
+
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $this->command->info('Start inserting settings');
+        foreach ($this->settings as $index => $setting) {
+            $result = Setting::create($setting);
+            if (!$result) {
+                $this->command->info("Insert failed at record $index.");
+                return;
+            }
+        }
+        $this->command->info('Admin permissions was inserted Successfully');
+    }
+}
