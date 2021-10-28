@@ -27,7 +27,7 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "php artisan vendor:publish --provider=\"wekode\\SettingServiceProvider\""
+            "php artisan vendor:publish --provider=\"wekode\\SettingSetupServiceProvider\""
         ]
     }
 
